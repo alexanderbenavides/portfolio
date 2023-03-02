@@ -19,3 +19,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### `Check the short YouTube video to know how this app works`
 
 [Micro cms demo video ](http://localhost:3000)
+
+
+### `Note`
+
+Create a new branch from **develop** after cloning the project.
