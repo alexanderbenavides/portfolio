@@ -1,4 +1,5 @@
 import { ButtonModel } from "../../../../models/components/shared/form";
+import { Icon } from "../icon/Icon";
 import './Button.scss';
 export function Button(props: ButtonModel.Props) {
   const hableClick = () => {
@@ -14,7 +15,7 @@ export function Button(props: ButtonModel.Props) {
       {props.text ? props.text : ''}
       {
         props.hasIcon && 
-        <i className="fa-solid fa-magnifying-glass"></i>
+        <Icon name="fa-solid fa-magnifying-glass"></Icon>
       }
     </button>
   );

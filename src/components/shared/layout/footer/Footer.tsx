@@ -1,5 +1,6 @@
 
 import { FooterModel } from '../../../../models/components/shared/layout';
+import { Icon } from '../../form';
 import './Footer.scss';
 const JsonData: FooterModel.JsonData[] = require('./footer.json');
 export function Footer() {   
@@ -13,7 +14,7 @@ export function Footer() {
         <footer>
             {
                 JsonData.map(json => (
-                <i key={json.url} className={'fa-brands ' + json.icon} onClick={() => goToPages(json.url)}></i>
+                <Icon key={json.url} name={'fa-brands ' + json.icon} onClick={() => goToPages(json.url)}></Icon>
                 ))
             }
         </footer>

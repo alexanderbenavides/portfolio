@@ -19,6 +19,7 @@ header {
                 &:not(:first-of-type) {
                     a,
                     span {
+                        color: inherit;
                         &.active {
                             border-bottom: 5px solid #3d5af1;
                         }

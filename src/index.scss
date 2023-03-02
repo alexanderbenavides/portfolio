@@ -25,15 +25,15 @@ ul {
 }
 
 .mb-16 {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mr-16 {
-  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 .ml-16 {
-  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .m-16 {
@@ -45,17 +45,26 @@ ul {
 }
 
 .pb-16 {
-  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pr-16 {
-  padding-top: 1rem;
+  padding-right: 1rem;
 }
 
 .pl-16 {
-  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 .p-16 {
   margin: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.place-center {
+  display: grid;
+  place-content: center;
 }

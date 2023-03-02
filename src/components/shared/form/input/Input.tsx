@@ -38,7 +38,7 @@ export function Input(props: InputModel.Props) {
   
   return (
     <section className="input-container">
-      <label htmlFor={props.id}>
+      <label htmlFor={props.id} className={props.isTextArea ? 'label-textarea' : 'label-input'}>
         {
           !props.isTextArea && 
           <input

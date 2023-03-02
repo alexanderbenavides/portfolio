@@ -5,15 +5,10 @@ export namespace PostModel {
         img: string;
         class: string;
         id: string;
+        createdAt: string;
     }
 
-    export function Post() {
-        return {
-            title:  '',
-            content:  '',
-            img:  '',
-            class:  '',
-            id:  ''
-        }
+    export interface Props {
+        hideActionIcons?: boolean;
     }
 }

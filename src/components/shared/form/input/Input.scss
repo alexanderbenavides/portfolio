@@ -1,11 +1,13 @@
 section.input-container {
     position: relative;
+
     label {
         display: flex;
         flex-direction: column;
         position: relative;
         width: fit-content;
         margin: 0.75rem;
+
         input, textarea {
             background-color: #F5F5F5;
             padding: 0.75rem 2rem;
@@ -13,6 +15,7 @@ section.input-container {
             border: none;
             border-bottom: 1px solid #9E9E9E;
             outline: none;
+
             &::placeholder {
                 opacity: 0;
             }
@@ -24,12 +27,20 @@ section.input-container {
             left: 5px;
             background-color: transparent;
         }
+
+        textarea + span {
+            top: 16px;
+        }
     }
     
-    label:focus-within > span,
-    input:not(:placeholder-shown) + span,
-    textarea:not(:placeholder-shown) + span {
+    label.input:focus-within > span,
+    input:not(:placeholder-shown) + span {
         transform:translateY(-28px);
+    }
+
+    label.textarea:focus-within > span,
+    textarea:not(:placeholder-shown) + span {
+        transform:translateY(-34px);
     }
 
     ul {
@@ -38,10 +49,12 @@ section.input-container {
         position: absolute;
         z-index: 1;
         width: 233px;
+
         li {
             background-color: #ffffff;
             padding: 0.5rem;
             cursor: pointer;
+
             &:hover {
                 background-color: #EEEEEE;
             }

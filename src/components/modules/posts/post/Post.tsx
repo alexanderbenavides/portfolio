@@ -26,7 +26,8 @@ export function Post() {
         <article>
           <h3> {postData.title} </h3>
           <img src={postData.img} alt="post" loading="lazy"/>
-          <p className="content">{postData.content}</p>
+          <p className="mt-16 content">{postData.content}</p>
+          <p className="mt-16 text-center">{postData.createdAt}</p>
         </article>
       }
     </section>

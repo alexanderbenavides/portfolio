@@ -1,10 +1,11 @@
-import { PostList } from "../PostsList";
+import { PostContent } from '../content/PostContent';
 import './Crud.scss';
 import { Input, Button } from "../../../shared/form";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postAction } from "../../../../redux/actions";
 import { PostModel } from "../../../../models/components/modules";
+import { formatDate } from "../../../../utils";
 const formDataDefault = { title: '', content: '', img: '', id: '', class: ''};
 export function PostCrud() {
   const dispacth = useDispatch();
@@ -29,7 +30,14 @@ export function PostCrud() {
     e.preventDefault();
     if (checkImage(formData.img)) {
       setFormData(formDataDefault);    
-      dispacth(postAction({...formData, id: dataToEdit.id ? dataToEdit.id : Date.now().toString()}, dataToEdit.id ? 'UPDATE_POST' : 'SAVE_POST'));
+      dispacth(postAction(
+        {
+          ...formData,
+          id: dataToEdit.id ? dataToEdit.id : Date.now().toString(),
+          createdAt: formatDate(new Date()),
+        },
+          dataToEdit.id ? 'UPDATE_POST' : 'SAVE_POST')
+      );
     } else {
       alert('Enter a valid img url');
     }
@@ -43,7 +51,7 @@ export function PostCrud() {
   return (
     <section className="crud-container">
       <article className="form">
-        <h3>Create a post</h3>
+        <h3>{dataToEdit.id ? 'Edit Post' : 'Create post'}</h3>
         <form onSubmit={submitForm}>
           <article className="form-container">
             <div className="form-control">
@@ -80,7 +88,7 @@ export function PostCrud() {
           </article>
         </form>
       </article>
-      <PostList />
+      <PostContent />
     </section>
   );
   }

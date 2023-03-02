@@ -1,5 +1,5 @@
 import { PostModel } from "../../models/components/modules";
-import { Utils } from "../../utils";
+import { formatDate, Utils } from "../../utils";
 import { actionsType } from "../actions";
 const postsData: PostModel.PostData[] = [];
 const postData: PostModel.PostData = {
@@ -7,7 +7,8 @@ const postData: PostModel.PostData = {
     content: '',
     img: '',
     class: '',
-    id: ''
+    id: '',
+    createdAt: formatDate(new Date())
 };
 const initialStatePosts = {
     posts: postsData,

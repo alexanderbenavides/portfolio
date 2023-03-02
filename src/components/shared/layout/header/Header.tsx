@@ -17,7 +17,7 @@ export function Header() {
         <ul>
           <li>
             <NavLink to="/">
-              <img src="https://cdn.pixabay.com/photo/2017/01/12/17/11/post-it-1975179_1280.png" alt="Logo" loading="lazy"/>
+              <img src="https://cdn.cdnlogo.com/logos/c/87/cms.svg" alt="Logo" loading="lazy"/>
             </NavLink>
           </li>
           <li>
