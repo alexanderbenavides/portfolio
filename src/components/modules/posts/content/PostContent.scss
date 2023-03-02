@@ -1,0 +1,9 @@
+@import '../../../../scss/mixins.scss';
+.post-content {
+    padding: 1rem;
+    @include for-medium {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 1rem;
+    }
+}
