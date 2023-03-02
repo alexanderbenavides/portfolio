@@ -1,0 +1,43 @@
+
+@import '../../../../scss/mixins.scss';
+
+header {
+    margin-top: 1rem;
+    @include for-medium {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-left: 0;
+            margin: 0.75rem auto;
+            li {
+                &:not(:first-of-type) {
+                    a,
+                    span {
+                        &.active {
+                            border-bottom: 5px solid #3d5af1;
+                        }
+                    }      
+                }
+            }
+    
+            a {
+                text-decoration: none;
+            }
+        }
+        img {
+            width: 60px;
+        }
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+    }
+}
+

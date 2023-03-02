@@ -1,0 +1,29 @@
+@import '../../../../scss/mixins.scss';
+section.crud-container {
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    .form {
+        background-color: #ffffff;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    article.form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        @include for-medium {
+            flex-direction: row;
+        }
+    }
+
+    .button-center {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #FFF0E5;
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+main {
+  padding: 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.mt-16 {
+  margin-top: 1rem;
+}
+
+.mb-16 {
+  margin-top: 1rem;
+}
+
+.mr-16 {
+  margin-top: 1rem;
+}
+
+.ml-16 {
+  margin-top: 1rem;
+}
+
+.m-16 {
+  margin: 1rem;
+}
+
+.pt-16 {
+  padding-top: 1rem;
+}
+
+.pb-16 {
+  padding-top: 1rem;
+}
+
+.pr-16 {
+  padding-top: 1rem;
+}
+
+.pl-16 {
+  padding-top: 1rem;
+}
+
+.p-16 {
+  margin: 1rem;
+}

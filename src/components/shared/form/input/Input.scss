@@ -1,0 +1,51 @@
+section.input-container {
+    position: relative;
+    label {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: fit-content;
+        margin: 0.75rem;
+        input, textarea {
+            background-color: #F5F5F5;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            border: none;
+            border-bottom: 1px solid #9E9E9E;
+            outline: none;
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+    
+        span {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            background-color: transparent;
+        }
+    }
+    
+    label:focus-within > span,
+    input:not(:placeholder-shown) + span,
+    textarea:not(:placeholder-shown) + span {
+        transform:translateY(-28px);
+    }
+
+    ul {
+        margin: 0.75rem;
+        margin-top: -0.75rem;
+        position: absolute;
+        z-index: 1;
+        width: 233px;
+        li {
+            background-color: #ffffff;
+            padding: 0.5rem;
+            cursor: pointer;
+            &:hover {
+                background-color: #EEEEEE;
+            }
+        }
+    }
+    
+}
