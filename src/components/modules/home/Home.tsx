@@ -33,7 +33,7 @@ export function Home() {
          <hr />
           <p className='p-16 text-center'>Follow me on YouTube</p>
           <iframe
-            src={`https://www.youtube.com/embed/zbFvJML8PS4`}
+            src='https://www.youtube.com/embed/zbFvJML8PS4'
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="Embedded youtube"

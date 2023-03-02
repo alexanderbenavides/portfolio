@@ -1,5 +1,6 @@
 @import '../../../../scss/mixins.scss';
 section.posts {
+
     article {
         background-color: #ffffff;
         text-align: center;
@@ -17,9 +18,11 @@ section.posts {
         ul {
             background-color: #ffffff;
             overflow-y: auto;
+
             &.mh-400 {
                 max-height: 400px;
             }
+            
             li {
                 background-color: #ffffff;
                 padding: 1rem;

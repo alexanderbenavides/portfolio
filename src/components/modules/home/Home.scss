@@ -1,7 +1,7 @@
 @import '../../../scss/mixins.scss';
 .home-container {
-    section.home-content {
 
+    section.home-content {
         @include for-medium {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

@@ -1,8 +1,8 @@
 import { PostModel } from "../../models/components/modules";
 import { formatDate, Utils } from "../../utils";
 import { actionsType } from "../actions";
-const postsData: PostModel.PostData[] = [];
-const postData: PostModel.PostData = {
+const postsData: PostModel.JsonData[] = [];
+const postData: PostModel.JsonData = {
     title: '',
     content: '',
     img: '',
@@ -13,7 +13,7 @@ const postData: PostModel.PostData = {
 const initialStatePosts = {
     posts: postsData,
     post: postData,
-    dataToEdit: postData
+    postFormData: postData
 }
 
 export const rootReducer = (state = initialStatePosts, action: any) => {
@@ -21,12 +21,12 @@ export const rootReducer = (state = initialStatePosts, action: any) => {
     switch (action.type) {
         case actionsType.SAVE_POST:
             return saveReducer(state, action);
-        case actionsType.UPDATE_POST:
+        case actionsType.UPDATE_FORM_POST:
             return updateReducer(state, action);
         case actionsType.DELETE_POST:            
             return deleteReducer(state, action);
         case actionsType.READ_POSTS:
-            const post = (action.payload as PostModel.PostData[]).find(post => post.class === 'selected');        
+            const post = (action.payload as PostModel.JsonData[]).find(post => post.class === 'selected');        
             return {
                 ...state,
                 posts: action.payload,
@@ -40,7 +40,7 @@ export const rootReducer = (state = initialStatePosts, action: any) => {
         case actionsType.READ_POST:
             return findReducer(action, 'post', state);
         case actionsType.EDIT_POST:  
-            return findReducer(action, 'dataToEdit', state);
+            return findReducer(action, 'postFormData', state);
         default:            
             return state;
     }
@@ -52,7 +52,7 @@ const  saveReducer = (state = initialStatePosts, action: any) => {
     return {
         ...state,
         posts,
-        dataToEdit: postData
+        postFormData: postData
     }
 }
 
@@ -66,7 +66,7 @@ const  updateReducer = (state = initialStatePosts, action: any) => {
     return {
         ...state,
         posts: [...updatedPosts],
-        dataToEdit: postData,
+        postFormData: postData,
         post: selectedPost ? action.payload : postData
     }
 }
@@ -82,7 +82,7 @@ const deleteReducer = (state = initialStatePosts, action: any) => {
     }
 }
 
-const findReducer = (action: any, obj: 'post' | 'dataToEdit', state = initialStatePosts) => {
+const findReducer = (action: any, obj: 'post' | 'postFormData', state = initialStatePosts) => {
     const posts = state.posts.map(({...post}) => {
         post.class = '';
         if (post.id === action.payload.id) post.class = 'selected';
@@ -96,7 +96,7 @@ const findReducer = (action: any, obj: 'post' | 'dataToEdit', state = initialSta
     }
 } 
 
-const saveToLocalStorage = (posts: PostModel.PostData[]) => {
+const saveToLocalStorage = (posts: PostModel.JsonData[]) => {
     localStorage.setItem(Utils.POSTS_STORAGE_KEY, JSON.stringify(posts));
 }
 

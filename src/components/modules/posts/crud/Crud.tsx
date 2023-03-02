@@ -9,14 +9,14 @@ import { formatDate } from "../../../../utils";
 const formDataDefault = { title: '', content: '', img: '', id: '', class: ''};
 export function PostCrud() {
   const dispacth = useDispatch();
-  const dataToEdit:PostModel.PostData  = useSelector(({data}: any) => data.dataToEdit);
+  const postFormData: PostModel.JsonData  = useSelector(({data}: any) => data.postFormData);
   const [formData, setFormData] = useState(formDataDefault);
 
   useEffect(() => {
-    if (dataToEdit.title) {
-      setFormData(dataToEdit);
+    if (postFormData.title) {
+      setFormData(postFormData);
     }
-  }, [dataToEdit]);
+  }, [postFormData]);
 
 
   const handleInput = (value: string, type: 'title' | 'content' | 'img') => {
@@ -33,10 +33,10 @@ export function PostCrud() {
       dispacth(postAction(
         {
           ...formData,
-          id: dataToEdit.id ? dataToEdit.id : Date.now().toString(),
+          id: postFormData.id ? postFormData.id : Date.now().toString(),
           createdAt: formatDate(new Date()),
         },
-          dataToEdit.id ? 'UPDATE_POST' : 'SAVE_POST')
+          postFormData.id ? 'UPDATE_FORM_POST' : 'SAVE_POST')
       );
     } else {
       alert('Enter a valid img url');
@@ -51,7 +51,7 @@ export function PostCrud() {
   return (
     <section className="crud-container">
       <article className="form">
-        <h3>{dataToEdit.id ? 'Edit Post' : 'Create post'}</h3>
+        <h3>{postFormData.id ? 'Edit Post' : 'Create post'}</h3>
         <form onSubmit={submitForm}>
           <article className="form-container">
             <div className="form-control">
@@ -91,6 +91,6 @@ export function PostCrud() {
       <PostContent />
     </section>
   );
-  }
+}
   
   

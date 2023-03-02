@@ -8,9 +8,9 @@ import './Post.scss';
 export function Post() {
   const { id } = useParams();
   const dispacth = useDispatch();
-  const postData : PostModel.PostData = useSelector(({data}: any) => data.post);
+  const postData : PostModel.JsonData = useSelector(({data}: any) => data.post);
   useEffect(() => {
-    const items: PostModel.PostData[] = JSON.parse(localStorage.getItem(Utils.POSTS_STORAGE_KEY) || '[]');    
+    const items: PostModel.JsonData[] = JSON.parse(localStorage.getItem(Utils.POSTS_STORAGE_KEY) || '[]');    
     if (items.length > 0) {
       const item = items.find(obj => obj.id === id);      
       if (item) {

@@ -4,7 +4,7 @@ import { PostModel } from "../../../../models/components/modules";
 import { Input } from "../../form";
 import './Header.scss';
 export function Header() {
-  const posts: PostModel.PostData[] = useSelector(({data}: any) => data.posts);
+  const posts: PostModel.JsonData[] = useSelector(({data}: any) => data.posts);
   const activeClassName = "underline";
   
   const submitForm = (evt?: any) => {

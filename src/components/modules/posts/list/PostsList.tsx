@@ -9,16 +9,16 @@ import './PostsList.scss';
 export function PostsList(props: PostModel.Props) {
   const navigate = useNavigate();
   const dispacth = useDispatch();
-  const posts: PostModel.PostData[] = useSelector(({data}: any) => data.posts);  
+  const posts: PostModel.JsonData[] = useSelector(({data}: any) => data.posts);  
 
   useEffect(() => {
-    const items: PostModel.PostData[] = JSON.parse(localStorage.getItem(Utils.POSTS_STORAGE_KEY) || '[]');    
+    const items: PostModel.JsonData[] = JSON.parse(localStorage.getItem(Utils.POSTS_STORAGE_KEY) || '[]');    
     if (items.length > 0) {
       dispacth(postAction(items, 'READ_POSTS'));
     }
   }, [dispacth]);
 
-  const seeDetails = (data: PostModel.PostData) => {
+  const seeDetails = (data: PostModel.JsonData) => {
     if (props.hideActionIcons) {
       navigate(`posts/${data.id}`);
     } else {
@@ -26,12 +26,12 @@ export function PostsList(props: PostModel.Props) {
     }
   }
 
-  const handleRemove = (e: any, data: PostModel.PostData) => {
+  const handleRemove = (e: any, data: PostModel.JsonData) => {
     e.stopPropagation();
     dispacth(postAction(data, 'DELETE_POST'));
   }
 
-  const handleEdit = (e: any, data: PostModel.PostData) => {
+  const handleEdit = (e: any, data: PostModel.JsonData) => {
     console.log(e);
     e.stopPropagation();
     dispacth(postAction(data, 'EDIT_POST'));

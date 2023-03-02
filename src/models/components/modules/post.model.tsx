@@ -1,5 +1,5 @@
 export namespace PostModel {
-    export interface PostData {
+    export interface JsonData {
         title: string;
         content: string;
         img: string;

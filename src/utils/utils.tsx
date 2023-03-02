@@ -8,10 +8,10 @@ export function formatDate(val: any) {
   const month = dateF.getMonth() + 1;
   const fullYear = dateF.getFullYear();
   const fullDate = (fullYear <= 9 ? '0' + fullYear : fullYear) + '-' + (month <= 9 ? '0' + month : month) + '-' + (date <= 9 ? '0' + date : date);
-  return fullDate + ' at ' + hoursFormat(val);
+  return fullDate + ' at ' + formatHours(val);
 }
 
-function hoursFormat(val: any): string {
+function formatHours(val: any): string {
   const time = new Date(val);
   const hour = time.getHours() < 10 ? '0' + time.getHours() : time.getHours();
   const minutes = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes();

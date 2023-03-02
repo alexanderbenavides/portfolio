@@ -5,3 +5,4 @@ export * from './posts/post/Post';
 export * from './posts/content/PostContent';
 export * from './posts/crud/Crud';
 export * from './contact/Contact';
+export * from './404/PageNotFound';

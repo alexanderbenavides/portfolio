@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './components/shared/layout';
-import { Home, About, PostCrud, Post, Contact } from './components/modules';
+import { Home, About, PostCrud, Post, Contact, PageNotFound } from './components/modules';
 function App() {
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
             <Route path=":id" element= { <Post/>}/>
           </Route>
           <Route path="/contact" element= { <Contact />}/>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         </main>
       </BrowserRouter>
