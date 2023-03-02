@@ -8,7 +8,7 @@ After cloning in the project directory, you can run:
 
 ### `npm install`
 
-To install all npm dependencies for the project. After that run:
+To install all npm dependencies for the project. After that, run:
 
 
 ### `npm start`
@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `Check the short YouTube video to know how this app works`
 
-[Micro cms demo video ](http://localhost:3000)
+[Micro cms demo video ](https://youtu.be/CG6q7gvlZwI)
 
 
 ### `Note`
