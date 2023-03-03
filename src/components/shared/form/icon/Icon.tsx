@@ -6,10 +6,10 @@ export function Icon(props: IconModel.Props) {
   }
   return (
     <i 
-     className={' ' + props.name}
+     className={props.name}
      style={{color: props.color}}
      onClick={(e) => hableClick(e)}
-     >
-     </i>
+    >
+    </i>
   );
 }

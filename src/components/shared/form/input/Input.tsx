@@ -71,7 +71,12 @@ export function Input(props: InputModel.Props) {
         <ul>
           {
             filteredData.map((data, index) =>(
-              <li key={'autocomplete' + index.toString()} onClick={() => handleRedirect(data)}>{data[template]}</li>
+              <li 
+                key={'autocomplete' + index.toString()}
+                onClick={() => handleRedirect(data)}
+              >
+                {data[template]}
+              </li>
             ))
           }
         </ul>
