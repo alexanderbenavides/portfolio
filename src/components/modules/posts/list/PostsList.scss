@@ -30,7 +30,9 @@ section.posts {
                 font-weight: 500;
                 display: flex;
                 position: relative;
-
+                padding-right: 4rem;
+                align-items: center;
+                
                 .flex-end {
                     position: absolute;
                     right: 0.5rem;

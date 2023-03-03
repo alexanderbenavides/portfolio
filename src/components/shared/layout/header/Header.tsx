@@ -8,7 +8,7 @@ export function Header() {
   const posts: PostModel.JsonData[] = useSelector(({data}: ReducerModel.Selector) => data.posts);
   const activeClassName = "underline";
   
-  const submitForm = (evt?: any) => {
+  const submitForm = (evt?: Event) => {
     evt?.preventDefault();
   }
 
@@ -69,7 +69,7 @@ export function Header() {
           </li>
         </ul>
       </nav>
-      <form className="form" onSubmit={submitForm}>
+      <form className="form" onSubmit={(e) => submitForm(e.nativeEvent)}>
           <Input 
             id="user"
             label="Search Post"

@@ -27,7 +27,7 @@ export function PostCrud() {
     }));
   }
 
-  const submitForm = (e: any) => {
+  const submitForm = (e: Event) => {
     e.preventDefault();
     if (checkImage(formData.img)) {
       setFormData(formDataDefault);    
@@ -53,7 +53,7 @@ export function PostCrud() {
     <section className="crud-container">
       <article className="form">
         <h3>{postFormData.id ? 'Edit Post' : 'Create post'}</h3>
-        <form onSubmit={submitForm}>
+        <form onSubmit={(e) => submitForm(e.nativeEvent)}>
           <article className="form-container">
             <div className="form-control">
               <Input 

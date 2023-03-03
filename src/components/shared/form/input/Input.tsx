@@ -24,7 +24,7 @@ export function Input(props: InputModel.Props) {
     setTemplate(autoComplete?.templateFilter ? autoComplete.templateFilter : templateF);
     let foundData: PostModel.JsonData[] = [];
     if (value) {
-      foundData = autoComplete?.data.filter((d: PostModel.JsonData) => ((d[template] || '') as string)?.toLowerCase().includes(value.toLowerCase())) || [];
+      foundData = autoComplete?.data.filter((d: PostModel.JsonData) => (d[template] || '')?.toLowerCase().includes(value.toLowerCase())) || [];
     }
     setFilteredData(foundData);    
   }

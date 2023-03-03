@@ -20,6 +20,8 @@ export function PostsList(props: PostModel.Props) {
   }, [dispacth]);
 
   const seeDetails = (data: PostModel.JsonData) => {
+    console.log('raaaaaaaaaaa');
+    
     if (props.hideActionIcons) {
       navigate(`posts/${data.id}`);
     } else {
@@ -27,12 +29,12 @@ export function PostsList(props: PostModel.Props) {
     }
   }
 
-  const handleRemove = (e: any, data: PostModel.JsonData) => {
+  const handleRemove = (e: Event, data: PostModel.JsonData) => {
     e.stopPropagation();
     dispacth(postAction(data, 'DELETE_POST'));
   }
 
-  const handleEdit = (e: any, data: PostModel.JsonData) => {
+  const handleEdit = (e: Event, data: PostModel.JsonData) => {
     e.stopPropagation();
     dispacth(postAction(data, 'EDIT_POST'));
   }
@@ -47,15 +49,29 @@ export function PostsList(props: PostModel.Props) {
           <h3>Posts</h3>
           <ul className= {posts.length > 0 ? 'mh-400': ''}>
             {
-              posts.map(data => (
-                <li key={data.id} className={props.hideActionIcons ? '' : data.class} onClick={() => seeDetails(data)}>
-                  <Icon name="fa-sharp fa-regular fa-circle"></Icon>
+              posts.map((data, index) => (
+                <li 
+                  key={'post' + index.toString()}
+                  className={props.hideActionIcons ? '' : data.class}
+                  onClick={() => seeDetails(data)}
+                >
+                  <Icon 
+                    name="fa-sharp fa-regular fa-circle" 
+                  />
                   {data.title}
                   {
                     !props.hideActionIcons && 
                     <div className="flex-end">
-                      <Icon name="fa-solid fa-trash" onClick={(e: any)=> handleRemove(e, data)}></Icon>
-                      <Icon name="fa-solid fa-pencil" onClick={(e: any)=> handleEdit(e, data)}></Icon>
+                      <Icon 
+                       name="fa-solid fa-trash"
+                       color="#f00"
+                       onClick={(e: Event)=> handleRemove(e, data)} 
+                      />
+                      <Icon 
+                       name="fa-solid fa-pencil"
+                       color="#fbb85f"
+                       onClick={(e: Event)=> handleEdit(e, data)} 
+                      />
                     </div> 
                   }
                  

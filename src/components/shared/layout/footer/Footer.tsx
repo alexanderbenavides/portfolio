@@ -13,8 +13,13 @@ export function Footer() {
     return (
         <footer>
             {
-                JsonData.map(json => (
-                <Icon key={json.url} name={'fa-brands ' + json.icon} onClick={() => goToPages(json.url)}></Icon>
+                JsonData.map((json, index) => (
+                <Icon 
+                  key={'brand' + index.toString()}
+                  name={'fa-brands ' + json.icon}
+                  color={json.color}
+                  onClick={() => goToPages(json.url)}
+                ></Icon>
                 ))
             }
         </footer>

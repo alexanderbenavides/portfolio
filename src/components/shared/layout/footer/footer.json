@@ -1,18 +1,22 @@
 [
     {
         "icon": "fa-github",
-        "url": "https://github.com/alexanderbenavides"
+        "url": "https://github.com/alexanderbenavides",
+        "color": ""
     },
     {
         "icon": "fa-stack-overflow",
-        "url": "https://stackoverflow.com/users/10492260/alexander"
+        "url": "https://stackoverflow.com/users/10492260/alexander",
+        "color": "#fcb470"
     },
     {
         "icon": "fa-linkedin",
-        "url": "https://www.linkedin.com/in/alexanderbenavides"
+        "url": "https://www.linkedin.com/in/alexanderbenavides",
+        "color": "#004182"
     },
     {
         "icon": "fa-youtube",
-        "url": "https://www.youtube.com/@freedevabc"
+        "url": "https://www.youtube.com/@freedevabc",
+        "color": "#f00"
     }
 ]

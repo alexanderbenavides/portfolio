@@ -15,7 +15,9 @@ export function Button(props: ButtonModel.Props) {
       {props.text ? props.text : ''}
       {
         props.hasIcon && 
-        <Icon name="fa-solid fa-magnifying-glass"></Icon>
+        <Icon 
+          name="fa-solid fa-magnifying-glass" 
+        />
       }
     </button>
   );

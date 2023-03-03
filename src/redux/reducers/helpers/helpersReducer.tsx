@@ -20,12 +20,14 @@ export const  updateReducer = (state = initialStatePosts, action: ReducerModel.P
     });
     const selectedPost = state.post.id === action.payload.id;
     saveToLocalStorage(updatedPosts);
-    return {
+    const data = {
         ...state,
         posts: [...updatedPosts],
         postFormData: postData,
-        post: selectedPost ? action.payload : postData
     }
+    if (selectedPost) data.post = action.payload;
+    console.log(selectedPost);
+    return data;
 }
 
 export const deleteReducer = (state = initialStatePosts, action: ReducerModel.PostAction) => {
@@ -41,8 +43,8 @@ export const deleteReducer = (state = initialStatePosts, action: ReducerModel.Po
 
 export const findReducer = (action: ReducerModel.PostAction, obj: 'post' | 'postFormData', state = initialStatePosts) => {
     const posts = state.posts.map(({...post}) => {
-        post.class = '';
-        if (post.id === action.payload.id) post.class = 'selected';
+        if (obj !== 'postFormData') post.class = '';
+        if (post.id === action.payload.id && obj !== 'postFormData') post.class = 'selected';
         return post;
     })
     saveToLocalStorage(posts);

@@ -5,6 +5,11 @@ export function Icon(props: IconModel.Props) {
     if (props?.onClick) props.onClick(e);
   }
   return (
-    <i className={' ' + props.name} onClick={(e) => hableClick(e)}></i>
+    <i 
+     className={' ' + props.name}
+     style={{color: props.color}}
+     onClick={(e) => hableClick(e)}
+     >
+     </i>
   );
 }
