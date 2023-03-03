@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { PostModel } from "../../../../models/components/modules";
+import { ReducerModel } from "../../../../models/redux";
 import { postAction } from "../../../../redux/actions";
 import { Utils } from "../../../../utils";
 import { Button, Icon } from "../../../shared/form";
@@ -9,7 +10,7 @@ import './PostsList.scss';
 export function PostsList(props: PostModel.Props) {
   const navigate = useNavigate();
   const dispacth = useDispatch();
-  const posts: PostModel.JsonData[] = useSelector(({data}: any) => data.posts);  
+  const posts: PostModel.JsonData[] = useSelector(({data}: ReducerModel.Selector) => data.posts);  
 
   useEffect(() => {
     const items: PostModel.JsonData[] = JSON.parse(localStorage.getItem(Utils.POSTS_STORAGE_KEY) || '[]');    
@@ -32,7 +33,6 @@ export function PostsList(props: PostModel.Props) {
   }
 
   const handleEdit = (e: any, data: PostModel.JsonData) => {
-    console.log(e);
     e.stopPropagation();
     dispacth(postAction(data, 'EDIT_POST'));
   }

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { PostModel } from "../../../../models/components/modules";
 import { InputModel } from "../../../../models/components/shared/form";
 import './Input.scss';
-const emptyData: any[] = [];
+const emptyData: PostModel.JsonData[] = [];
+const templateF : 'title' = 'title';
 export function Input(props: InputModel.Props) {  
   const [filteredData, setFilteredData] = useState(emptyData);
-  const [template, setTemplate] = useState('title');
+  const [template, setTemplate] = useState(templateF);
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
 
@@ -19,15 +21,15 @@ export function Input(props: InputModel.Props) {
   }
 
   const handleAutocomplete = (value: string) => {
-    setTemplate(autoComplete?.templateFilter ? autoComplete.templateFilter : 'title');
-    let foundData: any[] = [];
+    setTemplate(autoComplete?.templateFilter ? autoComplete.templateFilter : templateF);
+    let foundData: PostModel.JsonData[] = [];
     if (value) {
-      foundData = autoComplete?.data.filter((d: any) => ((d[template] || '') as string)?.toLowerCase().includes(value.toLowerCase())) || [];
+      foundData = autoComplete?.data.filter((d: PostModel.JsonData) => ((d[template] || '') as string)?.toLowerCase().includes(value.toLowerCase())) || [];
     }
     setFilteredData(foundData);    
   }
 
-  const handleRedirect = (data: any) => {
+  const handleRedirect = (data: PostModel.JsonData) => {
     setInputValue('');
     setFilteredData(emptyData);
     const templateRedirect = autoComplete?.templateRedirect || 'id';

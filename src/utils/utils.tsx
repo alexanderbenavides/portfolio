@@ -2,7 +2,7 @@ export class Utils {
   public static readonly POSTS_STORAGE_KEY = 'POSTS';
 }
 
-export function formatDate(val: any) {
+export function formatDate(val: Date) {
   const dateF = new Date(val);
   const date = dateF.getDate();
   const month = dateF.getMonth() + 1;
@@ -11,7 +11,7 @@ export function formatDate(val: any) {
   return fullDate + ' at ' + formatHours(val);
 }
 
-function formatHours(val: any): string {
+function formatHours(val: Date): string {
   const time = new Date(val);
   const hour = time.getHours() < 10 ? '0' + time.getHours() : time.getHours();
   const minutes = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes();

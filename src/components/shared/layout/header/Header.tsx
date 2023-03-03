@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { PostModel } from "../../../../models/components/modules";
+import { ReducerModel } from "../../../../models/redux";
 import { Input } from "../../form";
 import './Header.scss';
 export function Header() {
-  const posts: PostModel.JsonData[] = useSelector(({data}: any) => data.posts);
+  const posts: PostModel.JsonData[] = useSelector(({data}: ReducerModel.Selector) => data.posts);
   const activeClassName = "underline";
   
   const submitForm = (evt?: any) => {

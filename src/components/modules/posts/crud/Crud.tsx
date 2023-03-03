@@ -6,10 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { postAction } from "../../../../redux/actions";
 import { PostModel } from "../../../../models/components/modules";
 import { formatDate } from "../../../../utils";
+import { ReducerModel } from '../../../../models/redux';
 const formDataDefault = { title: '', content: '', img: '', id: '', class: ''};
 export function PostCrud() {
   const dispacth = useDispatch();
-  const postFormData: PostModel.JsonData  = useSelector(({data}: any) => data.postFormData);
+  const postFormData: PostModel.JsonData  = useSelector(({data}: ReducerModel.Selector) => data.postFormData);
   const [formData, setFormData] = useState(formDataDefault);
 
   useEffect(() => {

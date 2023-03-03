@@ -1,3 +1,5 @@
+import { PostModel } from "../../modules";
+
 export namespace InputModel {
     export interface Props {
         id: string;
@@ -9,8 +11,8 @@ export namespace InputModel {
     }
 
     export interface AutoComplete {
-        templateFilter: string;
-        templateRedirect: string;
-        data: any[]
+        templateFilter: 'title';
+        templateRedirect: 'id';
+        data: PostModel.JsonData[]
     }
 }
