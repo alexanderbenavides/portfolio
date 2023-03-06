@@ -7,19 +7,19 @@ function App() {
       <BrowserRouter>
         <Header />
         <main>
-        <Routes>
-          <Route path="/" element= { <Home />}/>
-          <Route path="/about" element= { <About />}/>
-          <Route path="/posts">
-            <Route index  element= { <PostCrud />}/>
-            <Route path=":id" element= { <Post/>}/>
-          </Route>
-          <Route path="/contact" element= { <Contact />}/>
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element= { <Home />}/>
+            <Route path="/about" element= { <About />}/>
+            <Route path="/posts">
+              <Route index  element= { <PostCrud />}/>
+              <Route path=":id" element= { <Post/>}/>
+            </Route>
+            <Route path="/contact" element= { <Contact />}/>
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
         </main>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   );
 }
