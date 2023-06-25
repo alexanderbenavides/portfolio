@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../../shared/form';
 import { PostsList } from '../posts/list/PostsList';
 import './Home.scss';
-const { data } = require('../../../utils/lorem-data.json');
+const { data, data1, data2, data3 } = require('../../../utils/home.json');
 
 export function Home() {
   const navigate = useNavigate();
@@ -23,6 +23,18 @@ export function Home() {
             <h1 className='fullname'>ALEXANDER BENAVIDES</h1>
             <p className='justify'>
               {data}
+            </p>
+            <br />
+            <p className='justify'>
+              {data1}
+            </p>
+            <br />
+            <p className='justify'>
+              {data2}
+            </p>
+            <br />
+            <p className='justify'>
+              {data3}
             </p>
           </div>
           <div>

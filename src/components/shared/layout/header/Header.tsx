@@ -18,7 +18,7 @@ export function Header() {
         <ul>
           <li>
             <NavLink to="/">
-              <img src="https://cdn.cdnlogo.com/logos/c/87/cms.svg" alt="Logo" loading="lazy"/>
+              <img src="https://yt3.ggpht.com/tUJZrHAj87dIBD3Cy6GOLosOo5otIUfFwXEkKx19CTfuWHdyd8GJY2hI_58hggsteX6tQrsr0g=s600-c-k-c0x00ffffff-no-rj-rp-mo" alt="Logo" loading="lazy"/>
             </NavLink>
           </li>
           <li>
@@ -49,20 +49,7 @@ export function Header() {
                     isActive ? activeClassName : undefined
                   }
                 >
-                  Blog
-                </span>
-              )}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="contact">
-              {({ isActive }) => (
-                <span
-                  className={
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  Contact
+                  Posts
                 </span>
               )}
             </NavLink>

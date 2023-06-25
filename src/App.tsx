@@ -14,7 +14,6 @@ function App() {
             <Route index  element= { <PostCrud />}/>
             <Route path=":id" element= { <Post/>}/>
           </Route>
-          <Route path="/contact" element= { <Contact />}/>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         </main>
